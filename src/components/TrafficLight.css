@@ -1,0 +1,25 @@
+.traffic-light {
+  display: flex;
+  flex-direction: column;
+  width: 40px;
+  background: #222;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+}
+.light {
+  width: 30px;
+  height: 30px;
+  margin: 5px auto;
+  border-radius: 50%;
+  background: #444;
+  opacity: 0.3;
+  transition: opacity 0.2s;
+}
+.light.red.on { background: red; opacity: 1; }
+.light.yellow.on { background: yellow; opacity: 1; }
+.light.green.on { background: green; opacity: 1; }
+.light.off {
+  opacity: 0.1 !important;
+  background: #444 !important;
+} 

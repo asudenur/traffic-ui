@@ -1,0 +1,17 @@
+.junction-area {
+  display: grid;
+  grid-template-areas:
+    ". north ."
+    "west . east"
+    ". south .";
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  width: 200px;
+  height: 200px;
+  margin: 40px auto;
+  position: relative;
+}
+.light-pos.light-1 { grid-area: north; }
+.light-pos.light-2 { grid-area: east; }
+.light-pos.light-3 { grid-area: south; }
+.light-pos.light-4 { grid-area: west; } 

@@ -8,14 +8,11 @@ export function TrafficProvider({ children }) {
   const [lights, setLights] = useState();
   const [algorithm, setAlgorithmState] = useState(ALGORITHMS[0].value);
 
-  // Faz stringini yönlere ve renklere çeviren fonksiyon
   const parsePhaseInfo = (phaseInfo) => {
     const directions = ["north", "east", "south", "west"];
     const colorMap = { G: "green", g: "green", R: "red", r: "red", Y: "yellow", y: "yellow" };
     let phase = phaseInfo;
-    // Debug log
     console.log("parsePhaseInfo input:", phaseInfo);
-    // Eğer string '/PhaseInfo: Grrr' gibi ise, ':' karakterinden sonrasını al
     if (typeof phaseInfo === "string" && phaseInfo.includes(":")) {
       phase = phaseInfo.split(":").pop().trim();
     }
@@ -44,7 +41,6 @@ export function TrafficProvider({ children }) {
   }, [lights]);
   const { sendAlgorithmChange } = useTrafficSignalR(handleTrafficUpdate);
 
-  // setAlgorithm fonksiyonu hem state'i hem backend'i günceller
   const setAlgorithm = (alg) => {
     setAlgorithmState(alg);
     sendAlgorithmChange(alg);

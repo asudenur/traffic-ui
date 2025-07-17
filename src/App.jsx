@@ -87,7 +87,7 @@ function MainContent({ modalOpen, setModalOpen, junctionType, setJunctionType })
               flexDirection: 'column',
               gap: 4,
               alignItems: 'center',
-              marginLeft: 60 // sidebar genişliği kadar boşluk bırak
+              marginLeft: 60 
             }}>
               <JunctionType type={JUNCTION_TYPES.find(j => j.value === junctionType)?.label} />
               <AlgorithmStatus algorithm={algorithm} />

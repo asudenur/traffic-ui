@@ -69,29 +69,31 @@ function MainContent({ modalOpen, setModalOpen, junctionType, setJunctionType })
               transition: 'background 0.2s'
             }}
           >Ayarları Değiştir</button>
+          {/* Bilgi kutusu butonun hemen altına */}
+          <div style={{
+            position: 'fixed',
+            top: 72,
+            right: 32,
+            zIndex: 2999,
+            background: 'rgba(30,32,40,0.92)',
+            color: '#fff',
+            borderRadius: 16,
+            boxShadow: '0 2px 16px #0007',
+            padding: '18px 28px',
+            minWidth: 180,
+            textAlign: 'center',
+            fontWeight: 500,
+            fontSize: 17,
+            border: '1.5px solid #7ec850',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 6,
+            pointerEvents: 'none',
+          }}>
+            <div style={{ fontWeight: 700, fontSize: 18, letterSpacing: 0.2 }}>Kavşak Tipi: <span style={{ color: '#7ec850' }}>{JUNCTION_TYPES.find(j => j.value === junctionType)?.label}</span></div>
+            <div style={{ fontWeight: 600, fontSize: 16, letterSpacing: 0.2 }}>Algoritma: <span style={{ color: '#7ec850' }}>{ALGORITHMS.find(j => j.value === algorithm)?.label}</span></div>
+          </div>
           <div className="junction-root">
-            <div style={{
-              marginTop: 24,
-              marginBottom: 12,
-              background: '#f4f6f8',
-              borderRadius: 12,
-              boxShadow: '0 2px 8px rgba(49,130,206,0.08)',
-              padding: 8,
-              minWidth: 180,
-              color: '#2d3748',
-              fontWeight: 500,
-              fontSize: 15,
-              textAlign: 'center',
-              border: '1px solid #e2e8f0',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: 4,
-              alignItems: 'center',
-              marginLeft: 60 
-            }}>
-              <JunctionType type={JUNCTION_TYPES.find(j => j.value === junctionType)?.label} />
-              <AlgorithmStatus algorithm={algorithm} />
-            </div>
             <JunctionArea />
           </div>
         </>

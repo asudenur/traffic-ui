@@ -4,7 +4,6 @@ import "./JunctionArea.css";
 
 export default function JunctionArea() {
   const { lights } = useTraffic();
-  console.log("JunctionArea lights:", lights);
 
   return (
     <div className="junction-area">

@@ -11,4 +11,4 @@ export default function Modal({ isOpen, title, children }) {
       </div>
     </div>
   );
-} 
+}

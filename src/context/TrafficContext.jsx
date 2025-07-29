@@ -3,7 +3,6 @@ import useTrafficSignalR from "../hooks/useTrafficSignalR";
 import ALGORITHMS from "../data/algorithms";
 
 const TrafficContext = createContext();
-//mvlfknvlfkn
 export function TrafficProvider({ children }) {
   const [lights, setLights] = useState();
   const [algorithm, setAlgorithmState] = useState(ALGORITHMS[0].value);

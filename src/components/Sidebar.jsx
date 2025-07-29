@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useTraffic } from "../context/TrafficContext";
 import ALGORITHMS from "../data/algorithms";
+import JUNCTION_TYPES from "../data/junctionTypes";
 
 export default function Sidebar() {
   const { algorithm, setAlgorithm } = useTraffic();
@@ -15,7 +16,6 @@ export default function Sidebar() {
         height: '100vh',
         width: open ? 240 : 56,
         background: '#222',
-        //open ? 'linear-gradient(135deg, rgba(29, 29, 29, 0.87), rgba(0, 0, 0, 0.45))' : 'transparent',
         color: '#222',
         zIndex: 2000,
         transition: 'width 0.25s cubic-bezier(.4,2,.6,1), background 0.18s',
@@ -31,7 +31,7 @@ export default function Sidebar() {
         style={{
           background: 'none',
           border: 'none',
-          color: open ? '#222' : '#444',
+          color: open ? '#e0e7ef' : '#e0e7ef',
           fontSize: 32,
           cursor: 'pointer',
           margin: '18px 0 0 12px',
@@ -42,9 +42,9 @@ export default function Sidebar() {
         aria-label={open ? "Menüyü Kapat" : "Menüyü Aç"}
       >
         <svg width="32" height="32" viewBox="0 0 28 28">
-          <rect y="5" width="28" height="3" rx="1.5" fill={open ? '#222' : '#444'} />
-          <rect y="12" width="28" height="3" rx="1.5" fill={open ? '#222' : '#444'} />
-          <rect y="19" width="28" height="3" rx="1.5" fill={open ? '#222' : '#444'} />
+          <rect y="5" width="28" height="3" rx="1.5" fill={open ? '#e0e7ef' : '#e0e7ef'} />
+          <rect y="12" width="28" height="3" rx="1.5" fill={open ? '#e0e7ef' : '#e0e7ef'} />
+          <rect y="19" width="28" height="3" rx="1.5" fill={open ? '#e0e7ef' : '#e0e7ef'} />
         </svg>
       </button>
       {open && (
@@ -55,7 +55,7 @@ export default function Sidebar() {
             marginBottom: 18,
             letterSpacing: 1,
             textAlign: 'center',
-            color: '#222'
+            color: '#e0e7ef'
           }}>
             Algoritma Seç
           </div>
@@ -67,7 +67,7 @@ export default function Sidebar() {
                 width: '95%',
                 background: algorithm === a.value
                   ? 'linear-gradient(90deg, #e0e7ef 0%, #cbd5e1 100%)'
-                  : 'rgba(0,0,0,0.03)',
+                  : '#e0e7ef',
                 color: '#222',
                 border: algorithm === a.value ? '2px solid #a0aec0' : '1px solid #e2e8f0',
                 borderRadius: 18,

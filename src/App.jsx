@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { TrafficProvider, useTraffic } from "./context/TrafficContext";
 import Modal from "./components/Modal";
-import AlgorithmStatus from "./components/AlgorithmStatus";
-import JunctionType from "./components/JunctionType";
 import JunctionArea from "./components/JunctionArea";
 import Sidebar from "./components/Sidebar";
 import JUNCTION_TYPES from './data/junctionTypes';
@@ -58,22 +56,10 @@ function MainContent({ modalOpen, setModalOpen, junctionType, setJunctionType })
       </Modal>
       {!modalOpen && (
         <>
-          <button
-            onClick={() => setModalOpen(true)}
-            style={{
-              position: 'fixed', top: 24, right: 32, zIndex: 3000,
-              background: 'linear-gradient(90deg, #3182ce 0%, #63b3ed 100%)',
-              color: 'white', border: 'none', borderRadius: 8,
-              fontWeight: 600, fontSize: 15, padding: '10px 22px',
-              boxShadow: '0 2px 8px rgba(49,130,206,0.08)', cursor: 'pointer',
-              transition: 'background 0.2s'
-            }}
-          >Ayarları Değiştir</button>
-          {/* Bilgi kutusu butonun hemen altına */}
           <div style={{
             position: 'fixed',
-            top: 72,
-            right: 32,
+            top: 22,
+            right: 10,
             zIndex: 2999,
             background: 'rgba(30,32,40,0.92)',
             color: '#fff',

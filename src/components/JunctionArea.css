@@ -39,7 +39,7 @@
 }
 /*Kuzey*/
 .light-1 {
-  left: 41%;
+  left: 40%;
   top: 30%;
   transform: translateX(-50%);
 }
@@ -58,11 +58,10 @@
 /*Güney*/
 .light-3 {
   left: 60%;
-  bottom: 30%;
+  bottom: 28%;
   transform: translateX(-50%);
 }
 
 .light-3 svg { transform: scaleX(-1); }
-
 .light-2 svg { transform: scaleX(-1); }
 .light-4 svg { transform: rotate(180deg) scaleX(-1) scaleY(-1); }

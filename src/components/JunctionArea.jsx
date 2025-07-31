@@ -1,9 +1,13 @@
 import { useTraffic } from "../context/TrafficContext";
 import TrafficLight from "./TrafficLight";
 import "./JunctionArea.css";
+import Vehicle from "./Vehicle";
 
 export default function JunctionArea() {
   const { lights } = useTraffic();
+
+  // Gerçek araç verisi SignalR'dan gelecek
+  const vehicles = []; // Şimdilik boş, SignalR'dan doldurulacak
 
   return (
     <div className="junction-area">
@@ -29,6 +33,10 @@ export default function JunctionArea() {
         <TrafficLight state={lights ? lights["south"] : undefined} direction="south" />
         <div>Güney</div>
       </div>
+      {/* Araçlar */}
+      {vehicles.map((v) => (
+        <Vehicle key={v.id} {...v} />
+      ))}
     </div>
   );
 } 

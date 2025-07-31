@@ -26,15 +26,14 @@ html, body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  /*overflow: hidden;*/
 }
 
 .junction-area {
   position: relative;
-  width: 90vw;
-  height: 38vw;
+  width: 95vw;
+  height: 95vw;
   max-width: 900px;
-  max-height: 700px;
+  max-height: 900px;
   min-width: 350px;
   min-height: 350px;
   background: linear-gradient(135deg, #7ec850 60%, #5fa13a 100%);
@@ -46,27 +45,27 @@ html, body {
 .vertical-road {
   position: absolute;
   left: 50%;
-  top: 0;
-  width: 22vw;
-  height: 100%;
-  max-width: 220px;
+  top: -10%;
+  width: 20vw;
+  height: 120%;
+  max-width: 200px;
   min-width: 80px;
   background: #444;
   transform: translateX(-50%);
-  border-radius: 40px;
+  border-radius: 20px;
   z-index: 1;
 }
 .horizontal-road {
   position: absolute;
   top: 50%;
-  left: 0;
-  height: 22vw;
-  width: 100%;
-  max-height: 220px;
+  left: -20%;
+  height: 20vw;
+  width: 140%;
+  max-height: 200px;
   min-height: 80px;
   background: #444;
   transform: translateY(-50%);
-  border-radius: 40px;
+  border-radius: 20px;
   z-index: 1;
 }
 
@@ -74,14 +73,14 @@ html, body {
   content: '';
   position: absolute;
   left: 50%;
-  width: 8px;
-  height: 38%;
+  width: 6px;
+  height: 45%;
   background: repeating-linear-gradient(
     to bottom,
-    #fff 0 12px,
-    transparent 12px 24px
+    #fff 0 10px,
+    transparent 10px 20px
   );
-  border-radius: 6px;
+  border-radius: 4px;
   z-index: 2;
 }
 .vertical-road::before {
@@ -96,14 +95,14 @@ html, body {
   content: '';
   position: absolute;
   top: 50%;
-  height: 8px;
-  width: 38%;
+  height: 6px;
+  width: 42%;
   background: repeating-linear-gradient(
     to right,
-    #fff 0 12px,
-    transparent 12px 24px
+    #fff 0 10px,
+    transparent 10px 20px
   );
-  border-radius: 6px;
+  border-radius: 4px;
   z-index: 2;
 }
 .horizontal-road::before {
@@ -115,44 +114,76 @@ html, body {
   transform: translateY(-50%) rotate(180deg);
 }
 
-.light-pos {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: 2;
-}
-.light-1 {
-  left: 25%;
-  top: 16%;
-  transform: translateX(-50%);
-}
-.light-4 {
-  left: 90%;
-  top: 76%;
-  transform: translateY(-50%);
-}
-.light-2 {
-  right: 90%;
-  top: 38%;
-  transform: translateY(-50%);
-}
-.light-3 {
-  left: 75%;
-  bottom: 4%;
-  transform: translateX(-50%);
-}
-
-@media (max-width: 600px) {
+/* Tablet boyutu */
+@media (max-width: 768px) {
   .junction-area {
     width: 98vw;
     height: 98vw;
-    min-width: 200px;
-    min-height: 200px;
+    border-radius: 30px;
   }
-  .vertical-road, .horizontal-road {
-    min-width: 30px;
-    min-height: 30px;
+  
+  .vertical-road {
+    width: 22vw;
+    min-width: 60px;
+    border-radius: 15px;
+  }
+  
+  .horizontal-road {
+    height: 22vw;
+    width: 150%;
+    min-height: 60px;
+    border-radius: 15px;
+  }
+}
+
+/* Mobil boyut */
+@media (max-width: 480px) {
+  .junction-area {
+    width: 100vw;
+    height: 100vw;
+    border-radius: 20px;
+    min-width: 300px;
+    min-height: 300px;
+  }
+  
+  .vertical-road {
+    width: 25vw;
+    min-width: 50px;
     border-radius: 10px;
+  }
+  
+  .horizontal-road {
+    height: 25vw;
+    width: 160%;
+    min-height: 50px;
+    border-radius: 10px;
+  }
+  
+  .vertical-road::before, .vertical-road::after {
+    width: 4px;
+  }
+  
+  .horizontal-road::before, .horizontal-road::after {
+    height: 4px;
+  }
+}
+
+/* Çok küçük ekranlar */
+@media (max-width: 320px) {
+  .junction-area {
+    width: 100vw;
+    height: 100vw;
+    border-radius: 15px;
+  }
+  
+  .vertical-road {
+    width: 30vw;
+    min-width: 45px;
+  }
+  
+  .horizontal-road {
+    height: 30vw;
+    width: 170%;
+    min-height: 45px;
   }
 }

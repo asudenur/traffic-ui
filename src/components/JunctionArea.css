@@ -1,17 +1,68 @@
 .junction-area {
-  display: grid;
-  grid-template-areas:
-    ". north ."
-    "west . east"
-    ". south .";
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  width: 200px;
-  height: 200px;
-  margin: 40px auto;
   position: relative;
+  width: 400px;
+  height: 400px;
+  margin: 40px auto;
+  background: #444;
 }
-.light-pos.light-1 { grid-area: north; }
-.light-pos.light-2 { grid-area: east; }
-.light-pos.light-3 { grid-area: south; }
-.light-pos.light-4 { grid-area: west; } 
+
+/* Dikey yol - uzatmak için height artır */
+.vertical-road {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 400px; /* Bu değeri artırarak yolu uzatabilirsin */
+  background: #666;
+  border-radius: 20px;
+}
+
+/* Yatay yol */
+.horizontal-road {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 400px;
+  height: 60px;
+  background: #666;
+  border-radius: 20px;
+}
+
+.light-pos {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+}
+/*Kuzey*/
+.light-1 {
+  left: 41%;
+  top: 30%;
+  transform: translateX(-50%);
+}
+/*Batı*/
+.light-4 {
+  left: 60%;
+  top: 38%;
+  transform: translateY(-50%);
+}
+/*Doğu*/
+.light-2 {
+  right: 60%;
+  bottom: 30%;
+  transform: translateY(-50%);
+}
+/*Güney*/
+.light-3 {
+  left: 60%;
+  bottom: 30%;
+  transform: translateX(-50%);
+}
+
+.light-3 svg { transform: scaleX(-1); }
+
+.light-2 svg { transform: scaleX(-1); }
+.light-4 svg { transform: rotate(180deg) scaleX(-1) scaleY(-1); }
